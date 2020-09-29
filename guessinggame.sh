@@ -16,10 +16,10 @@ do
   if [[ $response -gt $correct ]]
   then
     echo
-    echo "Thats not the correct answer. The number is smaller than that!"
+    echo "Thats not the correct answer. The number is smaller than that."
   else 
     echo
-    echo "Thats not the correct answer. The number is bigger than that!"
+    echo "Thats not the correct answer. The number is bigger than that."
   fi
   echo "Please, try again:"
   read response
