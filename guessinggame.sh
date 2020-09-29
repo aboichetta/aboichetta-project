@@ -7,13 +7,18 @@ function guess {
 }
 
 correct=$(guess)
+isnumber='^[0-9]+$'
 
 echo "Welcome to the guessing game! Try to guess how many files are in this directory:"
 read response
 
-while [[ $response -ne $correct ]]
+while [[ $response != $correct ]]
 do
-  if [[ $response -gt $correct ]]
+  if ! [[ $response =~ $isnumber ]]
+  then
+    echo
+    echo "Invalid character. Only positive numbers are accepted"
+  elif [[ $response -gt $correct ]]
   then
     echo
     echo "That's not the correct answer. The number is smaller than that."
